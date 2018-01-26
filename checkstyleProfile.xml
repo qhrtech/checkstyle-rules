@@ -1,0 +1,46 @@
+<profile>
+  <id>style-check</id>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.17</version>
+
+        <configuration>
+          <configLocation>qhr-checkstyle.xml</configLocation>
+        </configuration>
+
+        <executions>
+          <execution>
+            <id>validate</id>
+            <phase>validate</phase>
+            <configuration>
+              <includeTestSourceDirectory>true</includeTestSourceDirectory>
+              <encoding>UTF-8</encoding>
+              <consoleOutput>true</consoleOutput>
+              <failsOnError>true</failsOnError>
+              <linkXRef>false</linkXRef>
+            </configuration>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <dependencies>
+          <dependency>
+            <groupId>com.qhrtech.medeo</groupId>
+            <artifactId>checkstyle-rules</artifactId>
+            <version>1.1</version>
+          </dependency>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>8.7</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</profile>
