@@ -231,5 +231,11 @@
             <property name="exceptionVariableName" value="expected"/>
         </module>
         <module name="CommentsIndentation"/> -->
+
+
+        <!-- Addition QHR Checks -->
+        <module name="PackageDeclaration"/>
+        <module name="RedundantImport" />
+        <module name="SuppressWarningsHolder"/>
     </module>
 </module>

@@ -233,5 +233,19 @@
             <property name="exceptionVariableName" value="expected"/>
         </module>
         <module name="CommentsIndentation"/>
+
+        <!-- Addition QHR Checks -->
+        <module name="TodoComment" />
+        <module name="MissingDeprecated" />
+        <module name="PackageDeclaration"/>
+        <module name="RedundantImport" />
+        <module name="DefaultComesLast" />
+        <module name="EmptyStatement"/>
+        <module name="SuppressWarningsHolder"/>
+        
+        <module name="NewlineAtEndOfFile">
+            <property name="lineSeparator" value="lf_cr_crlf"/>
+        </module>
+        
     </module>
 </module>
