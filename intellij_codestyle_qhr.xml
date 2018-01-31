@@ -1,5 +1,3 @@
-<!-- QHR Code Style for IntelliJ
-    Java, HTML, CSS, Javascript - Version 2.0 -->
 <code_scheme name="QHR Code Style 2.0" version="173">
   <option name="OTHER_INDENT_OPTIONS">
     <value>
@@ -53,7 +51,6 @@
     <option name="IMPORT_LAYOUT_TABLE">
       <value>
         <package name="" withSubpackages="true" static="true" />
-        <emptyLine />
         <package name="" withSubpackages="true" static="false" />
       </value>
     </option>
