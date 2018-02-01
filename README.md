@@ -20,4 +20,4 @@ https://confluence.qhrtech.com/x/EgF4Ag
 - maven-codestyleProfile.xml - A snippet from pom.xml to add checkstyle to a project
 - netbeansConfiguration.xml - A snippet from pom.xml to add code styles (formatting) to a project
 - intellij_codestyle_qhr.xml - IntelliJ code style schema, must be imported and applied to projects
-- pom.xml - The maven project file to build checkstyle jars
+- pom.xml - The maven project file to build checkstyle jars.  This is not a reference for configuring other poms with the checkstyle.
