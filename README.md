@@ -14,7 +14,8 @@ https://confluence.qhrtech.com/x/EgF4Ag
 ## File Descriptions
 - src/main/resources - Contains checkstyle xml configurations
     - qhr-checkstyle.xml - QHR Style Guide 1.0 (Deprecated)
-- checkstyle-google_checks_qhr_strict.xml - The official Google Style Guide
+- checkstyle-google_checks_qhr_strict.xml - The full checks based on the official Google Style Guide
+- checkstyle-google_checks_qhr_strict_code.xml - All non-Javadocs checks based on the official Google Style Guide
 - checkstyle-google_checks_qhr_transitional.xml - A less strict verion of the Google Style Guide meant to facilitate the transition between QHR Style Guide 1.0 and Google Style Guide
 - eclipse-java-qhr-style.xml - Eclipse code style configuration, works with Eclipse code formatter plugins
 - maven-codestyleProfile.xml - A snippet from pom.xml to add checkstyle to a project
