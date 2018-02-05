@@ -243,9 +243,10 @@
         <module name="EmptyStatement"/>
         <module name="SuppressWarningsHolder"/>
 
-        <module name="NewlineAtEndOfFile">
-            <property name="lineSeparator" value="lf_cr_crlf"/>
-        </module>
+    </module>
 
+    <!-- Addition QHR Checks (Non-TreeWalker) -->
+    <module name="NewlineAtEndOfFile">
+        <property name="lineSeparator" value="lf_cr_crlf"/>
     </module>
 </module>
