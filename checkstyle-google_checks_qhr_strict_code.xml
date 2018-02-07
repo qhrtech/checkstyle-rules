@@ -175,6 +175,8 @@
         <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
             <property name="allowedAbbreviationLength" value="1"/>
+            <message key="abbreviation.as.word"
+                     value="Name ''{0}'' cannot contain consecutive capital letters."/>
         </module>
         <module name="OverloadMethodsDeclarationOrder"/>
         <module name="VariableDeclarationUsageDistance"/>
