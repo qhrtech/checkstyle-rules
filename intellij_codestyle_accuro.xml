@@ -1,4 +1,4 @@
-<code_scheme name="Accuro Code Style 2.0" version="173">
+<code_scheme name="QHR Accuro Style" version="173">
   <option name="SOFT_MARGINS" value="120" />
   <JavaCodeStyleSettings>
     <option name="SPACE_AFTER_CLOSING_ANGLE_BRACKET_IN_TYPE_ARGUMENT" value="true" />
@@ -61,7 +61,6 @@
     <option name="SPACE_BEFORE_ANNOTATION_ARRAY_INITIALIZER_LBRACE" value="true" />
     <option name="CALL_PARAMETERS_WRAP" value="1" />
     <option name="METHOD_CALL_CHAIN_WRAP" value="1" />
-    <option name="FOR_STATEMENT_LPAREN_ON_NEXT_LINE" value="true" />
     <option name="IF_BRACE_FORCE" value="3" />
     <option name="DOWHILE_BRACE_FORCE" value="3" />
     <option name="WHILE_BRACE_FORCE" value="3" />
