@@ -3,11 +3,10 @@
 ## Installation Instructions
 
 ### IntelliJ and NetBeans
-Set up your IDE to automatically format code according to convention. See the Confluence document "Set Up Code Styles in IDEs"
-https://confluence.qhrtech.com/x/CgF4Ag
+Set up your IDE to automatically format code according to convention. See the Confluence document "[Set Up Code Styles in IDEs](https://qhr.atlassian.net/l/cp/yQLoMLAw)"
 
 ### Checkstyle Configuration
-Enforce conventions for coding styles. See the Confluence document ["Set up Checkstyle for a Project"](https://qhr.atlassian.net/l/cp/yQLoMLAw)
+Enforce conventions for coding styles. See the Confluence document "[Enforce Coding Styles on a Project](https://qhr.atlassian.net/l/cp/ERRuyexe)"
 
 ## File Descriptions
 - src/main/resources - Contains checkstyle xml configurations
