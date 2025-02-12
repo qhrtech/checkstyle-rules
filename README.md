@@ -7,9 +7,7 @@ Set up your IDE to automatically format code according to convention. See the Co
 https://confluence.qhrtech.com/x/CgF4Ag
 
 ### Checkstyle Configuration
-Enforce conventions for coding styles. See the Confluence document "Set up Checkstyle for a Project"
-https://confluence.qhrtech.com/x/EgF4Ag
-
+Enforce conventions for coding styles. See the Confluence document ["Set up Checkstyle for a Project"](https://qhr.atlassian.net/l/cp/yQLoMLAw)
 
 ## File Descriptions
 - src/main/resources - Contains checkstyle xml configurations
