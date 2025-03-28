@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 env:
@@ -40,5 +40,5 @@ jobs:
         run: ./gradlew assemble testClasses
 
       - name: Submit Gradle Dependency Graph
-        if: ${{ github.ref_name == 'main' }}
+        if: ${{ github.ref_name == 'master' }}
         uses: gradle/actions/dependency-submission@v4
