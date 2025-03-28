@@ -1,0 +1,44 @@
+name: CI Build
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  ORG_GRADLE_PROJECT_qhrArtifactoryUsername: "${{ vars.ARTIFACTORY_IDENTITY_TOKEN_USER }}"
+  ORG_GRADLE_PROJECT_qhrArtifactoryPassword: "${{ secrets.ARTIFACTORY_IDENTITY_TOKEN }}"
+
+  JAVA_VERSION: "17"
+  JAVA_DISTRIBUTION: "zulu"
+
+concurrency:
+  group: "ci-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+          ssh-key: "${{ secrets.SSH_KEY_GITHUB }}"
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build
+        run: ./gradlew assemble testClasses
+
+      - name: Submit Gradle Dependency Graph
+        if: ${{ github.ref_name == 'main' }}
+        uses: gradle/actions/dependency-submission@v4

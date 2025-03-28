@@ -1,0 +1,58 @@
+name: Release
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  ORG_GRADLE_PROJECT_qhrArtifactoryUsername: "${{ vars.ARTIFACTORY_IDENTITY_TOKEN_USER }}"
+  ORG_GRADLE_PROJECT_qhrArtifactoryPassword: "${{ secrets.ARTIFACTORY_IDENTITY_TOKEN }}"
+
+  JAVA_VERSION: "17"
+  JAVA_DISTRIBUTION: "zulu"
+
+jobs:
+  release:
+    name: Make Release
+    runs-on: ubuntu-latest
+    outputs:
+      releasedTag: ${{ steps.release.outputs.releasedTag }}
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+          persist-credentials: true
+          ssh-key: "${{ secrets.SSH_KEY_GITHUB }}"
+      - name: Configure NPM Auth
+        run: |
+          ARTIFACTORY_BASE64=$(echo -n "${{ vars.ARTIFACTORY_IDENTITY_TOKEN_USER }}:${{ secrets.ARTIFACTORY_IDENTITY_TOKEN }}" | base64 -w0)
+          REGISTRY="https://qhrtech.jfrog.io/artifactory/api/npm/qhr-npm-group/"
+
+          # Extract the hostname from the registry URL.
+          REGISTRY_HOSTNAME=`echo "$REGISTRY" | sed -Ee "s|^https?://([^/:]+).*?|\1|"`
+
+          npm config set registry $REGISTRY
+
+          npm config set "//${REGISTRY_HOSTNAME}/:_auth" "$ARTIFACTORY_BASE64"
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          # Since this only uses a sub-set of the gradle tasks, don't use it to generate a cache only
+          # read the cache of another pipeline.
+          cache-read-only: true
+
+      - name: Release
+        id: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew semanticRelease

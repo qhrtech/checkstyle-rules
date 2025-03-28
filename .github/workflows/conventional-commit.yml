@@ -1,0 +1,19 @@
+
+name: "Conventional Commit"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+permissions:
+  pull-requests: read
+
+jobs:
+  main:
+    name: Validate PR title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: qhrtech/gh-action-semantic-pull-request@v1
