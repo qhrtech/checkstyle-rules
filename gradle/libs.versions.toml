@@ -4,7 +4,7 @@
 [versions]
 com-puppycrawl-tools-checkstyle = "8.29"
 
-conventionPlugins = "1.5.2-SNAPSHOT"
+conventionPlugins = "1.5.2"
 
 [libraries]
 checkstyle = { module = "com.puppycrawl.tools:checkstyle", version.ref = "com-puppycrawl-tools-checkstyle" }

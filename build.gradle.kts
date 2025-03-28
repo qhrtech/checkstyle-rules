@@ -9,8 +9,6 @@ dependencies { api(libs.checkstyle) }
 
 group = "com.qhrtech.medeo"
 
-version = "2.0.6-SNAPSHOT"
-
 description = "Medeo Checkstyle Rules"
 
 semanticRelease {
