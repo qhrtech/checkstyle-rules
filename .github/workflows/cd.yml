@@ -30,7 +30,7 @@ jobs:
         if: ${{ github.ref_type == 'tag' }}
         run: |
           echo "ORG_GRADLE_PROJECT_ciTag=true" >> $GITHUB_ENV
-          echo "TARGET_REPO=qhr-local-maven-gradle-plugins-secure-release" >> $GITHUB_ENV
+          echo "TARGET_REPO=qhr-local-maven-legacy-releases" >> $GITHUB_ENV
 
       - name: Set up JDK
         uses: actions/setup-java@v4
@@ -58,7 +58,7 @@ jobs:
       - name: Publish Packages to Artifactory
         run: |
           jfrog gradle-config --use-wrapper=true --uses-plugin=true --deploy-maven-desc=true --deploy-ivy-desc=false \
-             --repo-deploy ${TARGET_REPO:=qhr-local-maven-gradle-plugins-secure-snapshot}
+             --repo-deploy ${TARGET_REPO:=qhr-local-maven-thirdparty}
           jfrog gradle artifactoryPublish
 
       - name: Publish Artifactory Build
