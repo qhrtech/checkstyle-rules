@@ -10,3 +10,8 @@ buildNumber.properties
 *~
 .idea
 *.iml
+/build/
+/.gradle/
+/node_modules/
+/package.json
+/package-lock.json
