@@ -48,7 +48,7 @@ jobs:
 
       - name: Gather Artifactory Build Info
         run: |
-          export JFROG_CLI_BUILD_NAME="Gradle Convention Plugins"
+          export JFROG_CLI_BUILD_NAME="Checkstyle Rules"
           export JFROG_CLI_BUILD_NUMBER="${{ github.ref_name }}"
           echo "JFROG_CLI_BUILD_NAME=${JFROG_CLI_BUILD_NAME}" >> $GITHUB_ENV
           echo "JFROG_CLI_BUILD_NUMBER=${JFROG_CLI_BUILD_NUMBER}" >> $GITHUB_ENV
@@ -58,7 +58,7 @@ jobs:
       - name: Publish Packages to Artifactory
         run: |
           jfrog gradle-config --use-wrapper=true --uses-plugin=true --deploy-maven-desc=true --deploy-ivy-desc=false \
-             --repo-deploy ${TARGET_REPO:=qhr-local-maven-thirdparty}
+             --repo-deploy ${TARGET_REPO:=qhr-local-maven-snapshots}
           jfrog gradle artifactoryPublish
 
       - name: Publish Artifactory Build
