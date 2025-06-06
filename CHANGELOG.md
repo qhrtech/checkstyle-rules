@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.0](https://github.com/qhrtech/checkstyle-rules/compare/checkstyle-rules-2.1.2...checkstyle-rules-2.2.0) (2025-06-06)
+
+### Features
+
+* Enable support for checkstyle suppressions. ([#21](https://github.com/qhrtech/checkstyle-rules/issues/21)) ([91ed599](https://github.com/qhrtech/checkstyle-rules/commit/91ed5998e354437be8938a2d5831c052c5ccb531))
+
 ## [2.1.2](https://github.com/qhrtech/checkstyle-rules/compare/checkstyle-rules-2.1.1...checkstyle-rules-2.1.2) (2025-06-04)
 
 ### Bug Fixes
